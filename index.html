@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+
+    <!-- SEO -->
+    <title>BLINDSPOT — The Daily Car Guessing Game</title>
+    <meta name="description" content="Guess the mystery car in 8 tries. 1000+ cars, no hints, pure automotive knowledge. A new puzzle every day." />
+    <meta name="keywords" content="car game, daily game, wordle, car quiz, automotive, guess the car, blindspot" />
+    <meta name="author" content="BLINDSPOT" />
+    <meta name="theme-color" content="#08080A" />
+
+    <!-- Open Graph (social sharing) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BLINDSPOT — The Daily Car Guessing Game" />
+    <meta property="og:description" content="Guess the mystery car in 8 tries. 1000+ cars, no hints. Can you spot it?" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://playblindspot.com" />
+    <meta property="og:site_name" content="BLINDSPOT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BLINDSPOT — The Daily Car Guessing Game" />
+    <meta name="twitter:description" content="Guess the mystery car in 8 tries. 1000+ cars, no hints. Can you spot it?" />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BLINDSPOT" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Prevent phone number detection -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <style>
+      html, body, #root {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: #08080A;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Register service worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
